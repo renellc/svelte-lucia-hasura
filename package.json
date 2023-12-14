@@ -3,20 +3,28 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "concurrently \"vite dev\" \"pnpm codegen\"",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
-		"hasura:console": "cd hasura && hasura console"
+		"hasura:console": "cd hasura && hasura console",
+		"codegen": "graphql-codegen --config codegen.ts --watch"
 	},
 	"devDependencies": {
+		"@graphql-codegen/cli": "5.0.0",
+		"@graphql-codegen/client-preset": "^4.1.0",
+		"@graphql-codegen/gql-tag-operations-preset": "^2.1.0",
+		"@graphql-codegen/typescript": "4.0.1",
+		"@graphql-codegen/typescript-document-nodes": "4.0.1",
+		"@parcel/watcher": "^2.3.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.27.4",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
+		"concurrently": "^8.2.2",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.30.0",
@@ -30,7 +38,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@graphql-typed-document-node/core": "^3.2.0",
 		"@lucia-auth/adapter-postgresql": "^2.0.2",
+		"@urql/svelte": "^4.0.4",
+		"graphql": "^16.8.1",
+		"graphql-tag": "^2.12.6",
 		"lucia": "^2.7.4",
 		"postgres": "^3.4.3"
 	}
