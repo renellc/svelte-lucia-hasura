@@ -7,12 +7,18 @@
 	<form method="POST" class="flex flex-col gap-4">
 		<label class="label">
 			<span>Username</span>
-			<input id="username" class="input" type="text" placeholder="Enter username..." required />
+			<input name="username" class="input" type="text" placeholder="Enter username..." required />
 		</label>
 
 		<label class="label">
 			<span>Password</span>
-			<input id="password" class="input" type="password" placeholder="Enter password..." required />
+			<input
+				name="password"
+				class="input"
+				type="password"
+				placeholder="Enter password..."
+				required
+			/>
 		</label>
 
 		<button type="submit" class="variant-filled btn">Login</button>

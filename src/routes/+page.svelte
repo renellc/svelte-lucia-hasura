@@ -2,12 +2,14 @@
 	import { queryStore, getContextClient } from '@urql/svelte';
 	import { TEST_QUERY } from './page.gql';
 
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+
 	const users = queryStore({
 		client: getContextClient(),
 		query: TEST_QUERY
 	});
-
-	$: console.log($users.data);
 </script>
 
 <div class="flex h-full flex-col items-center justify-center">
@@ -21,4 +23,8 @@
 	{:else if $users.error}
 		<p>Error!</p>
 	{/if}
+
+	<form class="mt-4" method="POST" action="?/logout">
+		<button type="submit" class="variant-filled btn">Logout</button>
+	</form>
 </div>
