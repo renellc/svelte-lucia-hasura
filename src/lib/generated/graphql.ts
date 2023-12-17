@@ -127,7 +127,7 @@ export type Mutation_RootDelete_User_KeysArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_User_Keys_By_PkArgs = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 
@@ -139,7 +139,7 @@ export type Mutation_RootDelete_User_SessionsArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_User_Sessions_By_PkArgs = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 
@@ -316,7 +316,7 @@ export type Query_RootUser_Keys_AggregateArgs = {
 
 
 export type Query_RootUser_Keys_By_PkArgs = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 
@@ -339,7 +339,7 @@ export type Query_RootUser_Sessions_AggregateArgs = {
 
 
 export type Query_RootUser_Sessions_By_PkArgs = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 
@@ -413,7 +413,7 @@ export type Subscription_RootUser_Keys_AggregateArgs = {
 
 
 export type Subscription_RootUser_Keys_By_PkArgs = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 
@@ -443,7 +443,7 @@ export type Subscription_RootUser_Sessions_AggregateArgs = {
 
 
 export type Subscription_RootUser_Sessions_By_PkArgs = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 
@@ -487,7 +487,7 @@ export type Subscription_RootUsers_StreamArgs = {
 export type User_Keys = {
   __typename?: 'user_keys';
   hashed_password?: Maybe<Scalars['String']>;
-  id: Scalars['uuid'];
+  id: Scalars['String'];
   user_id: Scalars['uuid'];
 };
 
@@ -519,7 +519,7 @@ export type User_Keys_Bool_Exp = {
   _not?: InputMaybe<User_Keys_Bool_Exp>;
   _or?: InputMaybe<Array<User_Keys_Bool_Exp>>;
   hashed_password?: InputMaybe<String_Comparison_Exp>;
-  id?: InputMaybe<Uuid_Comparison_Exp>;
+  id?: InputMaybe<String_Comparison_Exp>;
   user_id?: InputMaybe<Uuid_Comparison_Exp>;
 };
 
@@ -532,7 +532,7 @@ export enum User_Keys_Constraint {
 /** input type for inserting data into table "user_keys" */
 export type User_Keys_Insert_Input = {
   hashed_password?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['uuid']>;
+  id?: InputMaybe<Scalars['String']>;
   user_id?: InputMaybe<Scalars['uuid']>;
 };
 
@@ -540,7 +540,7 @@ export type User_Keys_Insert_Input = {
 export type User_Keys_Max_Fields = {
   __typename?: 'user_keys_max_fields';
   hashed_password?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['String']>;
   user_id?: Maybe<Scalars['uuid']>;
 };
 
@@ -548,7 +548,7 @@ export type User_Keys_Max_Fields = {
 export type User_Keys_Min_Fields = {
   __typename?: 'user_keys_min_fields';
   hashed_password?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['String']>;
   user_id?: Maybe<Scalars['uuid']>;
 };
 
@@ -577,7 +577,7 @@ export type User_Keys_Order_By = {
 
 /** primary key columns input for table: user_keys */
 export type User_Keys_Pk_Columns_Input = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 /** select columns of table "user_keys" */
@@ -593,7 +593,7 @@ export enum User_Keys_Select_Column {
 /** input type for updating data in table "user_keys" */
 export type User_Keys_Set_Input = {
   hashed_password?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['uuid']>;
+  id?: InputMaybe<Scalars['String']>;
   user_id?: InputMaybe<Scalars['uuid']>;
 };
 
@@ -608,7 +608,7 @@ export type User_Keys_Stream_Cursor_Input = {
 /** Initial value of the column from where the streaming should start */
 export type User_Keys_Stream_Cursor_Value_Input = {
   hashed_password?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['uuid']>;
+  id?: InputMaybe<Scalars['String']>;
   user_id?: InputMaybe<Scalars['uuid']>;
 };
 
@@ -633,7 +633,7 @@ export type User_Keys_Updates = {
 export type User_Sessions = {
   __typename?: 'user_sessions';
   active_expires: Scalars['bigint'];
-  id: Scalars['uuid'];
+  id: Scalars['String'];
   idle_expires: Scalars['bigint'];
   user_id: Scalars['uuid'];
 };
@@ -681,7 +681,7 @@ export type User_Sessions_Bool_Exp = {
   _not?: InputMaybe<User_Sessions_Bool_Exp>;
   _or?: InputMaybe<Array<User_Sessions_Bool_Exp>>;
   active_expires?: InputMaybe<Bigint_Comparison_Exp>;
-  id?: InputMaybe<Uuid_Comparison_Exp>;
+  id?: InputMaybe<String_Comparison_Exp>;
   idle_expires?: InputMaybe<Bigint_Comparison_Exp>;
   user_id?: InputMaybe<Uuid_Comparison_Exp>;
 };
@@ -701,7 +701,7 @@ export type User_Sessions_Inc_Input = {
 /** input type for inserting data into table "user_sessions" */
 export type User_Sessions_Insert_Input = {
   active_expires?: InputMaybe<Scalars['bigint']>;
-  id?: InputMaybe<Scalars['uuid']>;
+  id?: InputMaybe<Scalars['String']>;
   idle_expires?: InputMaybe<Scalars['bigint']>;
   user_id?: InputMaybe<Scalars['uuid']>;
 };
@@ -710,7 +710,7 @@ export type User_Sessions_Insert_Input = {
 export type User_Sessions_Max_Fields = {
   __typename?: 'user_sessions_max_fields';
   active_expires?: Maybe<Scalars['bigint']>;
-  id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['String']>;
   idle_expires?: Maybe<Scalars['bigint']>;
   user_id?: Maybe<Scalars['uuid']>;
 };
@@ -719,7 +719,7 @@ export type User_Sessions_Max_Fields = {
 export type User_Sessions_Min_Fields = {
   __typename?: 'user_sessions_min_fields';
   active_expires?: Maybe<Scalars['bigint']>;
-  id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['String']>;
   idle_expires?: Maybe<Scalars['bigint']>;
   user_id?: Maybe<Scalars['uuid']>;
 };
@@ -750,7 +750,7 @@ export type User_Sessions_Order_By = {
 
 /** primary key columns input for table: user_sessions */
 export type User_Sessions_Pk_Columns_Input = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 /** select columns of table "user_sessions" */
@@ -768,7 +768,7 @@ export enum User_Sessions_Select_Column {
 /** input type for updating data in table "user_sessions" */
 export type User_Sessions_Set_Input = {
   active_expires?: InputMaybe<Scalars['bigint']>;
-  id?: InputMaybe<Scalars['uuid']>;
+  id?: InputMaybe<Scalars['String']>;
   idle_expires?: InputMaybe<Scalars['bigint']>;
   user_id?: InputMaybe<Scalars['uuid']>;
 };
@@ -805,7 +805,7 @@ export type User_Sessions_Stream_Cursor_Input = {
 /** Initial value of the column from where the streaming should start */
 export type User_Sessions_Stream_Cursor_Value_Input = {
   active_expires?: InputMaybe<Scalars['bigint']>;
-  id?: InputMaybe<Scalars['uuid']>;
+  id?: InputMaybe<Scalars['String']>;
   idle_expires?: InputMaybe<Scalars['bigint']>;
   user_id?: InputMaybe<Scalars['uuid']>;
 };
@@ -1008,13 +1008,13 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']>>;
 };
 
-export type UsersQueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type MyQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type UsersQueryQuery = { __typename?: 'query_root', users: Array<{ __typename?: 'users', username: string }> };
+export type MyQueryQuery = { __typename?: 'query_root', users: Array<{ __typename?: 'users', id: string, username: string }> };
 
 
-export const UsersQueryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"UsersQuery"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"users"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"username"}}]}}]}}]} as unknown as DocumentNode<UsersQueryQuery, UsersQueryQueryVariables>;
+export const MyQueryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"MyQuery"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"users"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"username"}}]}}]}}]} as unknown as DocumentNode<MyQueryQuery, MyQueryQueryVariables>;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -1136,7 +1136,7 @@ export type Mutation_RootDelete_User_KeysArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_User_Keys_By_PkArgs = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 
@@ -1148,7 +1148,7 @@ export type Mutation_RootDelete_User_SessionsArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_User_Sessions_By_PkArgs = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 
@@ -1325,7 +1325,7 @@ export type Query_RootUser_Keys_AggregateArgs = {
 
 
 export type Query_RootUser_Keys_By_PkArgs = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 
@@ -1348,7 +1348,7 @@ export type Query_RootUser_Sessions_AggregateArgs = {
 
 
 export type Query_RootUser_Sessions_By_PkArgs = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 
@@ -1422,7 +1422,7 @@ export type Subscription_RootUser_Keys_AggregateArgs = {
 
 
 export type Subscription_RootUser_Keys_By_PkArgs = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 
@@ -1452,7 +1452,7 @@ export type Subscription_RootUser_Sessions_AggregateArgs = {
 
 
 export type Subscription_RootUser_Sessions_By_PkArgs = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 
@@ -1496,7 +1496,7 @@ export type Subscription_RootUsers_StreamArgs = {
 export type User_Keys = {
   __typename?: 'user_keys';
   hashed_password?: Maybe<Scalars['String']>;
-  id: Scalars['uuid'];
+  id: Scalars['String'];
   user_id: Scalars['uuid'];
 };
 
@@ -1528,7 +1528,7 @@ export type User_Keys_Bool_Exp = {
   _not?: InputMaybe<User_Keys_Bool_Exp>;
   _or?: InputMaybe<Array<User_Keys_Bool_Exp>>;
   hashed_password?: InputMaybe<String_Comparison_Exp>;
-  id?: InputMaybe<Uuid_Comparison_Exp>;
+  id?: InputMaybe<String_Comparison_Exp>;
   user_id?: InputMaybe<Uuid_Comparison_Exp>;
 };
 
@@ -1541,7 +1541,7 @@ export enum User_Keys_Constraint {
 /** input type for inserting data into table "user_keys" */
 export type User_Keys_Insert_Input = {
   hashed_password?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['uuid']>;
+  id?: InputMaybe<Scalars['String']>;
   user_id?: InputMaybe<Scalars['uuid']>;
 };
 
@@ -1549,7 +1549,7 @@ export type User_Keys_Insert_Input = {
 export type User_Keys_Max_Fields = {
   __typename?: 'user_keys_max_fields';
   hashed_password?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['String']>;
   user_id?: Maybe<Scalars['uuid']>;
 };
 
@@ -1557,7 +1557,7 @@ export type User_Keys_Max_Fields = {
 export type User_Keys_Min_Fields = {
   __typename?: 'user_keys_min_fields';
   hashed_password?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['String']>;
   user_id?: Maybe<Scalars['uuid']>;
 };
 
@@ -1586,7 +1586,7 @@ export type User_Keys_Order_By = {
 
 /** primary key columns input for table: user_keys */
 export type User_Keys_Pk_Columns_Input = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 /** select columns of table "user_keys" */
@@ -1602,7 +1602,7 @@ export enum User_Keys_Select_Column {
 /** input type for updating data in table "user_keys" */
 export type User_Keys_Set_Input = {
   hashed_password?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['uuid']>;
+  id?: InputMaybe<Scalars['String']>;
   user_id?: InputMaybe<Scalars['uuid']>;
 };
 
@@ -1617,7 +1617,7 @@ export type User_Keys_Stream_Cursor_Input = {
 /** Initial value of the column from where the streaming should start */
 export type User_Keys_Stream_Cursor_Value_Input = {
   hashed_password?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['uuid']>;
+  id?: InputMaybe<Scalars['String']>;
   user_id?: InputMaybe<Scalars['uuid']>;
 };
 
@@ -1642,7 +1642,7 @@ export type User_Keys_Updates = {
 export type User_Sessions = {
   __typename?: 'user_sessions';
   active_expires: Scalars['bigint'];
-  id: Scalars['uuid'];
+  id: Scalars['String'];
   idle_expires: Scalars['bigint'];
   user_id: Scalars['uuid'];
 };
@@ -1690,7 +1690,7 @@ export type User_Sessions_Bool_Exp = {
   _not?: InputMaybe<User_Sessions_Bool_Exp>;
   _or?: InputMaybe<Array<User_Sessions_Bool_Exp>>;
   active_expires?: InputMaybe<Bigint_Comparison_Exp>;
-  id?: InputMaybe<Uuid_Comparison_Exp>;
+  id?: InputMaybe<String_Comparison_Exp>;
   idle_expires?: InputMaybe<Bigint_Comparison_Exp>;
   user_id?: InputMaybe<Uuid_Comparison_Exp>;
 };
@@ -1710,7 +1710,7 @@ export type User_Sessions_Inc_Input = {
 /** input type for inserting data into table "user_sessions" */
 export type User_Sessions_Insert_Input = {
   active_expires?: InputMaybe<Scalars['bigint']>;
-  id?: InputMaybe<Scalars['uuid']>;
+  id?: InputMaybe<Scalars['String']>;
   idle_expires?: InputMaybe<Scalars['bigint']>;
   user_id?: InputMaybe<Scalars['uuid']>;
 };
@@ -1719,7 +1719,7 @@ export type User_Sessions_Insert_Input = {
 export type User_Sessions_Max_Fields = {
   __typename?: 'user_sessions_max_fields';
   active_expires?: Maybe<Scalars['bigint']>;
-  id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['String']>;
   idle_expires?: Maybe<Scalars['bigint']>;
   user_id?: Maybe<Scalars['uuid']>;
 };
@@ -1728,7 +1728,7 @@ export type User_Sessions_Max_Fields = {
 export type User_Sessions_Min_Fields = {
   __typename?: 'user_sessions_min_fields';
   active_expires?: Maybe<Scalars['bigint']>;
-  id?: Maybe<Scalars['uuid']>;
+  id?: Maybe<Scalars['String']>;
   idle_expires?: Maybe<Scalars['bigint']>;
   user_id?: Maybe<Scalars['uuid']>;
 };
@@ -1759,7 +1759,7 @@ export type User_Sessions_Order_By = {
 
 /** primary key columns input for table: user_sessions */
 export type User_Sessions_Pk_Columns_Input = {
-  id: Scalars['uuid'];
+  id: Scalars['String'];
 };
 
 /** select columns of table "user_sessions" */
@@ -1777,7 +1777,7 @@ export enum User_Sessions_Select_Column {
 /** input type for updating data in table "user_sessions" */
 export type User_Sessions_Set_Input = {
   active_expires?: InputMaybe<Scalars['bigint']>;
-  id?: InputMaybe<Scalars['uuid']>;
+  id?: InputMaybe<Scalars['String']>;
   idle_expires?: InputMaybe<Scalars['bigint']>;
   user_id?: InputMaybe<Scalars['uuid']>;
 };
@@ -1814,7 +1814,7 @@ export type User_Sessions_Stream_Cursor_Input = {
 /** Initial value of the column from where the streaming should start */
 export type User_Sessions_Stream_Cursor_Value_Input = {
   active_expires?: InputMaybe<Scalars['bigint']>;
-  id?: InputMaybe<Scalars['uuid']>;
+  id?: InputMaybe<Scalars['String']>;
   idle_expires?: InputMaybe<Scalars['bigint']>;
   user_id?: InputMaybe<Scalars['uuid']>;
 };
@@ -2018,9 +2018,10 @@ export type Uuid_Comparison_Exp = {
 };
 
 
-export const UsersQuery = gql`
-    query UsersQuery {
+export const MyQuery = gql`
+    query MyQuery {
   users {
+    id
     username
   }
 }
